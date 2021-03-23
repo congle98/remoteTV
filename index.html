@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class Remote {
+        constructor(key) {
+            this.key=key;
+        }
+        onOff(){
+            if (tv.status==false){
+                tv.status=true;
+            }
+            else{
+                tv.status=false;
+            }
+        }
+        changeChanel(chanel){
+            if (tv.status==true){
+                tv.changeChanel(chanel);
+            }
+
+        }
+        setvolume(volume){
+            if (tv.status==true){
+                tv.setVolume(volume);
+            }
+
+        }
+    }
+    class TV {
+        constructor(chanel,volume) {
+            this.chanel=chanel;
+            this.volume=volume;
+            this.status=false;
+        }
+        changeChanel(chanel){
+            if(this.status==true){
+                this.chanel=chanel;
+            }
+        }
+        setVolume(volume){
+            if (this.status==true){
+                this.volume=volume;
+            }
+        }
+    }
+    let remote= new Remote(123);
+    let tv= new TV(5,20);
+    remote.onOff();
+    tv.status;
+    remote.changeChanel(10);
+
+
+</script>
